@@ -37,7 +37,7 @@
   * apiData - объект с результатом запроса
   */
   function useRequest(url, callback) {
-    var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest(); // Promise нужно использовать здесь
     xhr.open('GET', url, true);
     
     xhr.onload = function() {
@@ -83,7 +83,7 @@ var link = "https://picsum.photos/v2/list/?page="
 btnNode.addEventListener('click', () => {
   const value1 = document.querySelector('.input1').value;
   const value2 = document.querySelector('.input2').value;
-  const myPromise1 = new Promise((reslove, reject)=>{
+  const myPromise1 = new Promise((reslove, reject)=>{ // Здесь нет никакого асинхронного кода
     if (0 <= value1 <= 10){
       reslove({
         message: "Количество страниц указано верно",
@@ -106,7 +106,7 @@ btnNode.addEventListener('click', () => {
     })
 
   
-  const myPromise2 = new Promise((reslove, reject)=>{
+  const myPromise2 = new Promise((reslove, reject)=>{ // Здесь тоже нет никакого асинхронного кода
     if (0 <= value2 <= 10){
       reslove({
         message: "Лимит указан верно",
